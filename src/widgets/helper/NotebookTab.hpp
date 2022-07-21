@@ -28,6 +28,8 @@ public:
 
     QWidget *page;
 
+    bool isLive_{};
+
     void setCustomTitle(const QString &title);
     void resetCustomTitle();
     bool hasCustomTitle() const;
@@ -98,8 +100,6 @@ private:
     HighlightState highlightState_ = HighlightState::None;
     bool highlightEnabled_ = true;
     QAction *highlightNewMessagesAction_;
-
-    bool isLive_{};
 
     int growWidth_ = 0;
 

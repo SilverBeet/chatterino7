@@ -59,6 +59,7 @@ public:
     void performLayout(bool animate = false);
 
     void setTabDirection(NotebookTabDirection direction);
+    void sortTabs();
 
     bool isNotebookLayoutLocked() const;
     void setLockNotebookLayout(bool value);

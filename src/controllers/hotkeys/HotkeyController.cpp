@@ -498,6 +498,9 @@ void HotkeyController::addDefaults(std::set<QString> &addedHotkeys)
         this->tryAddDefault(addedHotkeys, HotkeyCategory::Window,
                             QKeySequence("Ctrl+U"), "setTabVisibility",
                             {"toggle"}, "toggle tab visibility");
+        this->tryAddDefault(addedHotkeys, HotkeyCategory::Window,
+                            QKeySequence("Ctrl+S"), "sortTabs",
+                            std::vector<QString>(), "Sort tabs by live");
     }
 }
 

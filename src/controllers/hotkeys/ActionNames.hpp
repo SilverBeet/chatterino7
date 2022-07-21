@@ -204,6 +204,10 @@ inline const std::map<HotkeyCategory, ActionDefinitionMap> actionNames{
               "[on, off, or toggle. default: toggle]",
               0,
               1,
+          }},
+         {"sortTabs",
+          ActionDefinition{
+              "Sort tabs by live",
           }}}},
 };
 

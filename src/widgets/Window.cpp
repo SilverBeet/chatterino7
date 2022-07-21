@@ -603,6 +603,11 @@ void Window::addShortcuts()
              }
              return "";
          }},
+        {"sortTabs",
+         [this](std::vector<QString>) -> QString {
+             this->notebook_->sortTabs();
+             return "";
+         }},
     };
 
     this->addDebugStuff(actions);

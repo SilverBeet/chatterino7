@@ -608,7 +608,7 @@ void Notebook::performLayout(bool animated)
             }
         }
 
-        x = std::max({x, buttonWidth, minimumTabAreaSpace});
+        x = this->showTabs_ ? x : 0;
 
         if (this->lineOffset_ != x - lineThickness)
         {
@@ -709,6 +709,15 @@ void Notebook::addNotebookActionsToMenu(QMenu *menu)
         QKeySequence("Ctrl+U"));
 
     menu->addAction(this->lockNotebookLayoutAction_);
+}
+
+void Notebook::sortTabs()
+{
+    std::sort(this->items_.begin(), this->items_.end(), [](Item &a, Item &b) {
+        return a.tab->isLive_ > b.tab->isLive_;
+    });
+
+    this->performLayout(true);
 }
 
 NotebookButton *Notebook::getAddButton()
